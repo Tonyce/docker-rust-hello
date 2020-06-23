@@ -4,7 +4,10 @@ FROM debian
 # Set the working directory.
 WORKDIR /app
 
-ENV RUST_ENV=test
+# 可传参 docker build --build-arg RUST_ENV=alpha
+ARG RUST_ENV=alpha
+ENV RUST_ENV=$RUST_ENV
+# ENV RUST_ENV=test
 # Copy the file from your host to your current location.
 # COPY package.json .
 

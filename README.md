@@ -33,3 +33,19 @@ docker build -t rust/hello-world .
 docker run --name test-rust-hello-world -it --rm rust/hello-world
 Hello, world!
 ```
+
+## 在 build 时传变量
+
+```
+ARG RUST_ENV=alpha
+ENV RUST_ENV=$RUST_ENV
+
+docker build --build-arg RUST_ENV=beta -t rust/hello-world:v1.0.0 .
+```
+
+## TODO
+
+stats 监控
+
+1.每个 container 上报 ？
+2.docker stats
