@@ -36,11 +36,33 @@ Hello, world!
 
 ## 在 build 时传变量
 
-```
+```bash
 ARG RUST_ENV=alpha
 ENV RUST_ENV=$RUST_ENV
 
 docker build --build-arg RUST_ENV=beta -t rust/hello-world:v1.0.0 .
+```
+
+## 使用 docker
+
+```bash
+> docker run -P -d --rm rust/hello-world:v1.0.0
+
+> docker container ls
+CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                     NAMES
+b26674179e4d        rust/hello-world:v1.0.0   "/app/hello-world"       19 seconds ago      Up 26 seconds       0.0.0.0:32773->8080/tcp   admiring_gates
+19b9563c52f4        node/hello-world          "docker-entrypoint.s…"   12 minutes ago      Up 12 minutes       0.0.0.0:32772->8989/tcp   mystifying_faraday
+
+> docker-machine ip
+192.168.99.101
+
+> curl -i 192.168.99.101:32773
+HTTP/1.1 200 OK
+content-length: 13
+date: Wed, 24 Jun 2020 08:24:58 GMT
+content-type: text/plain;charset=utf-8
+
+Hello, world!%
 ```
 
 ## TODO

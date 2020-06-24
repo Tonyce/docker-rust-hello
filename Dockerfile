@@ -15,7 +15,7 @@ ENV RUST_ENV=$RUST_ENV
 # RUN npm install
 
 # Inform Docker that the container is listening on the specified port at runtime.
-# EXPOSE 8080
+EXPOSE 8080
 
 # Run the specified command within the container.
 # CMD [ "/bin/bash" ]
