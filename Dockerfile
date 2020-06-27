@@ -22,4 +22,4 @@ EXPOSE 8080
 CMD [ "/app/hello-world" ]
 
 # Copy the rest of your app's source code from your host to your image filesystem.
-COPY target/x86_64-unknown-linux-musl/debug/hello-world .
+COPY bin/hello-world .
