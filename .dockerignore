@@ -1,0 +1,11 @@
+.git
+.corgo
+
+src
+build.rs
+target
+
+Makefile
+README.md
+Dockerfile
+Cargo.*
